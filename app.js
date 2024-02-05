@@ -3,7 +3,7 @@
 
 // let paragrafo = document.querySelector("p");
 // paragrafo.innerHTML = "Escolha um  número entre 1 e 10";
-let numeroLimite = 10;
+let numeroLimite = ;
 let listaDeNumerosSorteados = [];
 let numeroSecreto = gerarNumeroAleatorio();
 let  tentativas = 1;
@@ -69,4 +69,3 @@ function verificarReinicio(){
 mensagemInicial();
 document.getElementById("reiniciar").setAttribute("disable", true)
 }
-le
