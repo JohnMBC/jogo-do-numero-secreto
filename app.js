@@ -2,15 +2,15 @@
 // titulo.innerHTML = "Jogo adivinhe o número secreto";
 
 // let paragrafo = document.querySelector("p");
-// paragrafo.innerHTML = "Escolha um  número entre 1 e 10";
-let numeroLimite = ;
+// paragrafo.innerHTML = "Escolha um  número entre 1 e 50";
+let numeroLimite = 50;
 let listaDeNumerosSorteados = [];
 let numeroSecreto = gerarNumeroAleatorio();
 let  tentativas = 1;
 
 function mensagemInicial(){
     exibirTextonaTela("h1", "Jogo do número secreto");
-    exibirTextonaTela("p", "Escolha um número entre 1 e 10");
+    exibirTextonaTela("p", "Escolha um número entre 1 e 50");
 }
 mensagemInicial()
 
@@ -27,13 +27,14 @@ function verificarChute() {
     if (chute == numeroSecreto) {
         exibirTextonaTela("h1", "Acertou!");
         let palavraTentativa = tentativas > 1 ? "tentativas" : "tentativa";//Aqui estou armazenando, por questões obvias `depende do numero de tentativas`
-        let mensagensTentativas = `Parabéns descobriu o número secreto com ${tentativas} ${palavraTentativa}!`
+        let mensagensTentativas = `Parabéns!!! você descobriu o número secreto com ${tentativas} ${palavraTentativa}!`
         exibirTextonaTela("p",mensagensTentativas)
         document.getElementById("reiniciar").removeAttribute("disabled");
     } else if (chute > numeroSecreto) {
         exibirTextonaTela("h1", "Errou!");
         exibirTextonaTela("p", "O numero  secreto é menor");
     } else {
+        exibirTextonaTela("h1", "Errou!");
         exibirTextonaTela("p", "O numero secreto é maior");
     } 
     tentativas++;
@@ -42,7 +43,7 @@ function verificarChute() {
 }
 
 function gerarNumeroAleatorio() {
-    let numeroEscolhido = parseInt(Math.random() * 9 + 1);
+    let numeroEscolhido = parseInt(Math.random() * 49 + 1);
     let quantidadeDeElementosNalista = listaDeNumerosSorteados.length;
     if(quantidadeDeElementosNalista == 3){
         listaDeNumerosSorteados= [];
